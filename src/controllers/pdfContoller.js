@@ -3,7 +3,6 @@ const path = require("path");
 
 
 const  PdfController = {
-
     downloadPdf: async (req, res) =>{
     const url = req.query.url
 

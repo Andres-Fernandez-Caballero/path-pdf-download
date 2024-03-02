@@ -6,8 +6,7 @@ const PdfService = {
 
     downloadPdf: async (url) => {
       
-        const downloadFolder = path.join(__dirname, '../', 'download');
-        FileManager.dropDirectory(downloadFolder);
+        FileManager.dropDirectory();
             
         const browser = await puppeteer.launch();
         const page = await browser.newPage();
@@ -16,7 +15,7 @@ const PdfService = {
           waitUntil: 'networkidle0',
         });
       
-        const pdfPath = FileManager.createPdfFile(downloadFolder)
+        const pdfPath = FileManager.createPdfFile()
         await page.pdf({
           path: pdfPath,
           format: 'A4',
