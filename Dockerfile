@@ -8,8 +8,8 @@ COPY package*.json ./
 RUN npm ci
 COPY . .
 
-ENV PORT=port
-EXPOSE 3000
+ENV PORT=$port
+EXPOSE $port
 CMD ["node", "index.js"]
 
 

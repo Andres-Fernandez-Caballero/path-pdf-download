@@ -4,5 +4,5 @@ services:
   app:
     build: .
     ports:
-      - "4040:3030"  
+      - "4040:3000"  
 
